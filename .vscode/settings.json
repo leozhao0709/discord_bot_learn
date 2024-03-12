@@ -1,0 +1,15 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.experimental.useFlatConfig": false,
+  "eslint.options": {
+    "overrideConfigFile": "build-tools/.eslintrc.js"
+  },
+  "eslint.workingDirectories": [
+    {
+      "pattern": "./apps/*"
+    },
+    {
+      "pattern": "./packages/*"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "typescript.tsdk": "../../node_modules/typescript/lib/",
+  "prettier.configPath": "build-tools/.prettierrc.js",
+  "eslint.options": {
+    "overrideConfigFile": "build-tools/.eslintrc.js"
+  },
+  "stylelint.configFile": "build-tools/.stylelint.config.ts",
+  "stylelint.validate": ["css", "scss"]
+}

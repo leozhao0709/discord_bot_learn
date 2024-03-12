@@ -1,0 +1,39 @@
+{
+  "name": "hello-bot",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "pnpm typeCheck && pnpm eslint && pnpm vitest && pnpm test:e2e",
+    "build": "NODE_ENV=production pnpm build:clean && tsc -p tsconfig.build.json && tsc-alias",
+    "build:clean": "rm -rf dist",
+    "clean": "rm -rf node_modules dist coverage",
+    "prepublishOnly": "pnpm test  && pnpm build",
+    "typeCheck": "tsc --noEmit",
+    "eslint": "eslint --config build-tools/.eslintrc.js --ext .ts,.tsx,.js,.jsx src/ tests/",
+    "lintStaged": "lint-staged --config build-tools/.lint-staged.config.js",
+    "vitest": "vitest --config build-tools/vitest.config.mts run --coverage",
+    "vitest:dev": "vitest --config build-tools/vitest.config.mts dev",
+    "test:e2e": "vitest --config build-tools/vitest.e2e.config.mts run --coverage",
+    "test:e2e:dev": "vitest --config build-tools/vitest.e2e.config.mts dev",
+    "dev": "nodemon",
+    "start": "NODE_ENV=production node --enable-source-maps dist/index.js",
+    "debug": "nodemon --inspect-brk"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
+  "engines": {
+    "node": ">=v20.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "log4js": "^6.9.1"
+  }
+}

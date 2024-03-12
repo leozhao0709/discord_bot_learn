@@ -1,0 +1,1 @@
+unset NO_COLOR && pnpm lintStaged
